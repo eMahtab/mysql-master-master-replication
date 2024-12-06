@@ -139,3 +139,28 @@ We create a `users` table under test database on `mysql-master-1` and insert 20 
 Records are replicated on **_mysql-master-2_**
 
 !["Records are replicated to other mysql instance"](check-records-on-other-mysql-instance.png?raw=true)
+
+## Step 5a : Create and execute a MySQL procedure on mysql-master-1 and see Replication in action
+
+```sql
+DELIMITER $$
+```
+```sql
+CREATE PROCEDURE insert_users()
+BEGIN
+    DECLARE i INT DEFAULT 1;
+    WHILE i <= 10000 DO
+        INSERT INTO users (name) VALUES (CONCAT('User_', i));
+        SET i = i + 1;
+    END WHILE;
+END$$
+```
+```sql
+DELIMITER ;
+```
+
+### Next execute the procedure
+```sql
+CALL insert_users();
+```
+```
