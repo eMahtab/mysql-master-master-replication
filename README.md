@@ -197,3 +197,7 @@ CALL insert_users();
 ### Below screenshot shows replication in progress and after some time all 10,000 records are replicated on mysql-master-2 
 
 !["10,000 Records replicated on other MySQL instance"](records-replicated-on-other-master.png?raw=true)
+
+## Step 6 : Testing the replication in opposite direction, from mysql-master-2 to mysql-master-1 (Bidirectional data replication)
+
+!["Bidirectional data replication"](bidirectional-data-replication.png?raw=true)
