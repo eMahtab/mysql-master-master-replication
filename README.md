@@ -85,9 +85,10 @@ Get the master status, execute the command **`SHOW MASTER STATUS;`** on both the
 ## Step 4 : Execute `CHANGE MASTER TO` command on both the MySQL instances
 Next we need to execute **`CHANGE MASTER TO`** command on both the MySQL instances. Connect to each MySQL instance and execute below command, **_don't forget to update MASTER_LOG_FILE and MASTER_LOG_POS values_** which you get from executing SHOW MASTER STATUS command.
 
-```sql
-Update MASTER_LOG_FILE and MASTER_LOG_POS and then execute this on MySQL instance running on mysql-master-1 docker container
+### On mysql-master-1
+Update **_MASTER_LOG_FILE and MASTER_LOG_POS_** and then execute this on MySQL instance running on mysql-master-1 docker container
 
+```sql
 CHANGE MASTER TO
   MASTER_HOST='mysql_master_2',
   MASTER_PORT=3306,
@@ -98,9 +99,10 @@ CHANGE MASTER TO
   GET_MASTER_PUBLIC_KEY=1;
 ```
 
-```sql
-Update MASTER_LOG_FILE and MASTER_LOG_POS and then execute this on MySQL instance running on mysql-master-2 docker container
+### On mysql-master-1
+Update **_MASTER_LOG_FILE and MASTER_LOG_POS_** and then execute this on MySQL instance running on mysql-master-2 docker container
 
+```sql
 CHANGE MASTER TO
   MASTER_HOST='mysql_master_1',
   MASTER_PORT=3306,
