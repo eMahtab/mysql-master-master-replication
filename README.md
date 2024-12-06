@@ -99,7 +99,7 @@ CHANGE MASTER TO
   GET_MASTER_PUBLIC_KEY=1;
 ```
 
-### On mysql-master-1
+### On mysql-master-2
 Update **_MASTER_LOG_FILE and MASTER_LOG_POS_** and then execute this on MySQL instance running on mysql-master-2 docker container
 
 ```sql
