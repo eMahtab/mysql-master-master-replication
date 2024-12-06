@@ -61,3 +61,6 @@ volumes:
   mysql-master-2-volume:
 ```
 
+!["Starting two MySQL Instances as Docker Containers"](docker-compose-up.png?raw=true)
+
+!["Two MySQL Instances as Docker Containers"](docker-containers.png?raw=true)
