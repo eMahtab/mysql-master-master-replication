@@ -66,7 +66,7 @@ volumes:
 !["Two MySQL Instances as Docker Containers"](docker-containers.png?raw=true)
 
 ## Step 2 : Create Replication user on both the MySQL instances with REPLICATION SLAVE privilege
-Next we need to create a replication user on Master and grant that user `REPLICATION SLAVE` privilege.
+Next we need to create a replication user on both the MySQL instances `(mysql-master-1 and mysql-master-2)` and grant that user `REPLICATION SLAVE` privilege.
 To do this, we execute bash against master **`docker exec -it mysql-master bash`** and connect to mysql **`mysql -uroot -ptoor`** running on master, then execute below mysql commands.
 ```sql
 CREATE USER 'replicator'@'%' IDENTIFIED BY 'rotacilper';
