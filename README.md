@@ -134,6 +134,32 @@ By performing the steps 1 to 4, we have set the replication from mysql-master-1 
 
 We create a `users` table under test database on `mysql-master-1` and insert 20 records in `users` table
 
+```sql
+USE test
+CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL);
+INSERT INTO users (name)
+VALUES
+    ('Alice'),
+    ('Bob'),
+    ('Charlie'),
+    ('David'),
+    ('Eve'),
+    ('Frank'),
+    ('Grace'),
+    ('Hannah'),
+    ('Ivy'),
+    ('Jack'),
+    ('Karen'),
+    ('Liam'),
+    ('Mia'),
+    ('Noah'),
+    ('Olivia'),
+    ('Paul'),
+    ('Quincy'),
+    ('Rachel'),
+    ('Sophia'),
+    ('Thomas');
+```
 !["Add Records on mysql instance"](add-records.png?raw=true)
 
 Records are replicated on **_mysql-master-2_**
