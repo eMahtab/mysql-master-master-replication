@@ -192,3 +192,6 @@ DELIMITER ;
 CALL insert_users();
 ```
 
+!["Create and execute procedure on mysql-master-1"](create-and-execute-procedure.png?raw=true)
+
+!["10,000 Records replicated on other MySQL instance"](records-replicated-on-other-master.png?raw=true)
