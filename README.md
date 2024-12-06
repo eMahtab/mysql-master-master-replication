@@ -200,4 +200,20 @@ CALL insert_users();
 
 ## Step 6 : Testing the replication in opposite direction, from mysql-master-2 to mysql-master-1 (Bidirectional data replication)
 
+We insert 2 records in `users` table on mysql-master-2 , and those 2 records are replicated to mysql-master-1, as shown in screenshot below.
+
 !["Bidirectional data replication"](bidirectional-data-replication.png?raw=true)
+
+### Step 6a : Testing the replication in opposite direction, from mysql-master-2 to mysql-master-1 (Bidirectional data replication)
+Next we create a table `da_events` on `mysql-master-2` and insert a single record in the table.
+```sql
+CREATE TABLE da_events (id INT AUTO_INCREMENT PRIMARY KEY, event_type VARCHAR(200));
+
+INSERT INTO da_events VALUES (1, 'FETCH_CATEGORY');
+```
+As we can see from screenshot the data is replicated on `mysql-master-1`
+
+!["Bidirectional data replication"](bidirectional-data-replication-2.png?raw=true)
+
+# References :
+1. https://github.com/eMahtab/mysql-master-slave-replication
