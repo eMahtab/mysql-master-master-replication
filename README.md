@@ -74,3 +74,11 @@ GRANT REPLICATION SLAVE ON *.* TO 'replicator'@'%';
 FLUSH PRIVILEGES;
 ```
 Here we create a replication user called `replicator` with password `rotacilper` and grant this user **`REPLICATION SLAVE`** privilege, and finally flush privileges.
+
+## Step 3 : Execute SHOW MASTER STATUS on both the MySQL instances
+Get the master status, execute the command **`SHOW MASTER STATUS;`** on both the MySQL instances to find the Binlog file and position.
+
+!["Get Master status"](create-replication-user-and-show-status.png?raw=true)
+
+!["Get Master status"](create-replication-user-and-show-status-2.png?raw=true)
+
