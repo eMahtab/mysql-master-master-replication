@@ -171,6 +171,7 @@ Records are replicated on **_mysql-master-2_**
 ```sql
 DELIMITER $$
 ```
+Next we create a procedure `insert_users` which inserts 10,000 records in `users` table
 ```sql
 CREATE PROCEDURE insert_users()
 BEGIN
@@ -185,8 +186,9 @@ END$$
 DELIMITER ;
 ```
 
-### Next execute the procedure
+### And then execute the procedure
+
 ```sql
 CALL insert_users();
 ```
-```
+
