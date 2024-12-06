@@ -130,10 +130,12 @@ START SLAVE;
 !["CHANGE MASTER TO"](change-master-to-and-start-2.png?raw=true)
 
 ## Step 5 : Insert Records and see Replication in action
-By performing the step 1 to 4, we have set the replication from mysql-master-1 to mysql-master-2 and vice versa, now whatever changes are done on any one of the MySQL instance will be replicated to other MySQL instance automatically.
+By performing the steps 1 to 4, we have set the replication from mysql-master-1 to mysql-master-2 and vice versa, now whatever changes are done on any one of the MySQL instance will be replicated to other MySQL instance automatically. 
 
-!["Update Master database"](update-database.png?raw=true)
+We create a `users` table under test database on `mysql-master-1` and inserts 20 records in `users` table
 
-We create `users` table under test database on the Master and insert records into the users table.
+!["Add Records on mysql instance"](add-records.png?raw=true)
 
-!["Replication on Slave"](replication-on-slave.png?raw=true)
+Records are replicated on **_mysql-master-2_**
+
+!["Records are replicated to other mysql instance"](check-records-on-other-mysql-instance.png?raw=true)
