@@ -82,11 +82,11 @@ Get the master status, execute the command **`SHOW MASTER STATUS;`** on both the
 
 !["Get Master status"](create-replication-user-and-show-status-2.png?raw=true)
 
-## Step 4 : execute `CHANGE MASTER TO` command on both the MySQL instances
-Next we need to execute **`CHANGE MASTER TO`** command on both the MySQL instances. Connect to each MySQL instance and execute below command, update MASTER_LOG_FILE and MASTER_LOG_POS values which you get from executing SHOW MASTER STATUS command.
+## Step 4 : Execute `CHANGE MASTER TO` command on both the MySQL instances
+Next we need to execute **`CHANGE MASTER TO`** command on both the MySQL instances. Connect to each MySQL instance and execute below command, **_don't forget to update MASTER_LOG_FILE and MASTER_LOG_POS values_** which you get from executing SHOW MASTER STATUS command.
 
 ```sql
-Execute this on MySQL instance running on mysql-master-1 docker container
+Update MASTER_LOG_FILE and MASTER_LOG_POS and then execute this on MySQL instance running on mysql-master-1 docker container
 
 CHANGE MASTER TO
   MASTER_HOST='mysql_master_2',
@@ -99,7 +99,7 @@ CHANGE MASTER TO
 ```
 
 ```sql
-Execute this on MySQL instance running on mysql-master-2 docker container
+Update MASTER_LOG_FILE and MASTER_LOG_POS and then execute this on MySQL instance running on mysql-master-2 docker container
 
 CHANGE MASTER TO
   MASTER_HOST='mysql_master_1',
