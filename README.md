@@ -124,3 +124,9 @@ and then
 ```sql
 START SLAVE;
 ```
+
+!["CHANGE MASTER TO"](change-master-to-and-start.png?raw=true)
+
+!["CHANGE MASTER TO"](change-master-to-and-start-2.png?raw=true)
+
+
