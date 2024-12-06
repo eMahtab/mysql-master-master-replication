@@ -194,4 +194,6 @@ CALL insert_users();
 
 !["Create and execute procedure on mysql-master-1"](create-and-execute-procedure.png?raw=true)
 
+## Below screenshot shows replication in progress and after some time all 10,000 records are replicated on mysql-master-2 
+
 !["10,000 Records replicated on other MySQL instance"](records-replicated-on-other-master.png?raw=true)
