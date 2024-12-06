@@ -1,0 +1,43 @@
+---
+version: "2"
+services:
+  mysql_master_1:
+    image: mysql:8.0
+    container_name: mysql-master-1
+    volumes:
+      - mysql-master-1-volume:/tmp
+    command:
+      [
+        "mysqld",
+        "--datadir=/tmp/master1/data",
+        "--log-bin=bin.log",
+        "--server-id=1"
+      ]
+    environment:
+      &mysql-default-environment
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: test
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: insecure
+    ports:
+      - "3308:3306"
+
+  mysql_master_2:
+    image: mysql:8.0
+    container_name: mysql-master-2
+    volumes:
+      - mysql-master-2-volume:/tmp
+    command:
+      [
+        "mysqld",
+        "--datadir=/tmp/master2/data",
+        "--log-bin=bin.log",
+        "--server-id=2"
+      ]
+    environment: *mysql-default-environment
+    ports:
+      - "3309:3306"
+
+volumes:
+  mysql-master-1-volume:
+  mysql-master-2-volume:
